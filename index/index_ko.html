@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Youngmin's Portfolio</title>
+
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <script defer src="../js/script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+<!-- ===========================
+     Navigation Bar (initially hidden)
+============================ -->
+<header class="navbar hidden">
+    <nav class="nav-container">
+        <ul class="nav-links">
+            <li><a href="#home"><i data-lucide="home"></i><span>Home</span></a></li>
+            <li><a href="#about"><i data-lucide="user"></i><span>About</span></a></li>
+            <li><a href="#work"><i data-lucide="layout-grid"></i><span>Projects</span></a></li>
+            <li><a href="#contact"><i data-lucide="mail"></i><span>Contact</span></a></li>
+        </ul>
+
+        <!-- Dark mode toggle button -->
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <!-- Language selection dropdown -->
+        <div class="language-dropdown">
+            <button id="lang-toggle" aria-label="Choose language">KO</button>
+            <ul class="lang-menu hidden">
+                <li data-lang="en">EN</li>
+                <li data-lang="ko">KO</li>
+                <li data-lang="ja">JA</li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- ===========================
+     Main Content (initially hidden)
+============================ -->
+<main class="main-content hidden">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>안녕하세요, 코드로 이야기를 쓰는 정영민입니다.</h1>
+        <br/>
+        <p class="hero-subtext">
+            한 잔의 커피 ☕ 에서 아이디어를 얻고,<br/>
+            화면 너머의 세상 🌐 을 코드로 그려냅니다.
+        </p>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>제 이야기, 들어보실래요?</h2>
+        <p>
+            저는 매일 밤, 화면 앞에서 작은 모험을 즐기는 개발자입니다.
+            완벽한 코드보다 재밌는 코드를 꿈꾸고, 그 과정에서 가끔은 멋진 실패도 경험합니다.
+        </p>
+        <p>
+            지금은 클라우드 네이티브라는 바다를 항해하며, 백엔드와 프론트엔드를 넘나들며 기술의 지평을 넓히고 있습니다.
+            군더더기 없는 코드와 유쾌한 자동화를 추구하며, ‘깔끔함’이라는 미학에 빠져있습니다.
+        </p>
+        <p>
+            코딩을 쉬는 날엔, 새로운 기술을 찾아 인터넷 바다를 떠돌거나,
+            컨테이너와 씨름하며 ‘이거 되나?’ 하고 궁금해하는 시간을 즐깁니다.
+        </p>
+        <p>
+            제 목표는 단순히 '작동하는 프로그램'이 아닙니다.
+            누군가가 '이거 누가 만들었어?'라고 궁금해할 정도로 매력적인 소프트웨어를 만드는 것이죠.
+        </p>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+
+        <div class="skill-card">
+            <h3>든든한 백엔드 개발</h3>
+            <p><strong>집중 분야:</strong> RESTful API, MVC 설계, 데이터베이스, 인증 보안</p>
+            <p><strong>주요 기술:</strong> Java, Spring Boot, MySQL, Servlet/JSP, Redis</p>
+            <div class="details">
+                <p>
+                    시스템의 튼튼한 뼈대를 만들고, 보기 좋은 코드를 짜는 게 제 역할입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>매력적인 프론트엔드 개발</h3>
+            <p><strong>집중 분야:</strong> 반응형 웹, 사용자 경험 디자인</p>
+            <p><strong>주요 기술:</strong> HTML5, CSS3, JavaScript</p>
+            <div class="details">
+                <p>
+                    사용자들이 즐겁게 머물 수 있는 화면을 디자인합니다.
+                    쓰기 좋은 UI, 눈이 편한 디자인을 추구합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>클라우드 & DevOps의 달인</h3>
+            <p><strong>집중 분야:</strong> 클라우드 인프라, CI/CD, 컨테이너 자동화</p>
+            <p><strong>주요 기술:</strong> AWS, Kubernetes, Docker, Terraform, GitHub Actions, ArgoCD, Linux, 쉘 스크립트, Prometheus/Grafana, OpenShift, CloudFormation, 서비스 메시</p>
+            <div class="details">
+                <p>
+                    모든 것을 자동화하고, 안정적인 운영을 위해 언제나 준비되어 있습니다.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- Work Section -->
+    <section class="section" id="work">
+        <h2>My Recent Projects</h2>
+
+        <div class="work-list">
+            <!-- Placeholder projects -->
+            <div class="work-card">
+                <h3>미니 게시판 애플리케이션 (JSP + Servlet + Spring MVC)</h3>
+                <p>
+                    Spring MVC를 이용해 만든 간결한 게시판 앱입니다. MVC 구조를 명확히 나누어 유지보수가 쉽도록 설계했습니다.
+                </p>
+                <div class="tech-stack">기술 스택: Java 21, Spring Boot 3.4.4, JSP, Servlet, Gradle</div>
+                <div class="buttons">
+                    <a href="https://github.com/jyoungmin-com/JSP-Servlet-SpringMVC" target="_blank" class="button-link">
+                        GitHub
+                    </a>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>프로젝트 #2 (준비 중)</h3>
+                <p>곧 찾아옵니다. 기대해주세요!</p>
+                <div class="tech-stack">기술 스택: 미정</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>프로젝트 #3 (준비 중)</h3>
+                <p>곧 찾아옵니다. 기대해주세요!</p>
+                <div class="tech-stack">기술 스택: 미정</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>프로젝트 #4 (준비 중)</h3>
+                <p>곧 찾아옵니다. 기대해주세요!</p>
+                <div class="tech-stack">기술 스택: 미정</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="more-projects">더 많은 프로젝트가 궁금하신가요? 언제든 연락 주세요.</p>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2>편하게 이야기 나눠요!</h2>
+        <p>
+            기술 이야기도 좋고, 일상 이야기나 고민 상담도 환영입니다.
+            ☕️ 커피 한 잔 하면서 이야기 나누시죠.
+        </p>
+        <p><strong>Email:</strong> <a href="mailto:youngmin.jung@outlook.com">youngmin.jung@outlook.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/jyoungmin-com" target="_blank">github.com/your-github</a>
+        </p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a>
+        </p>
+    </section>
+
+    <hr class="section-divider"/>
+</main>
+</body>
+</html>

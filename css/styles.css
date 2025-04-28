@@ -1,0 +1,598 @@
+/* ======================================
+   Global CSS Variables
+====================================== */
+:root {
+    --bg-light: #f9f9f9;
+    --text-dark: #1a1a1a;
+    --text-light: #fff;
+    --bg-dark: #000;
+    --accent: #444;
+    --muted: rgba(255, 255, 255, 0.1);
+    --glass-dark: rgba(0, 0, 0, 0.6);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ======================================
+   Base Styles
+====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.skill-card,
+.work-card,
+.nav-container,
+.section-divider {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ======================================
+   Dark Mode Overrides
+====================================== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .intro-screen,
+body.dark-mode .apple-intro {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .skill-card,
+body.dark-mode .work-card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .skill-card h3 {
+    color: #fff;
+}
+
+body.dark-mode .nav-container {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .nav-links li a {
+    color: #ffffff;
+}
+
+body.dark-mode .nav-links li.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .nav-links li:not(.active):hover a {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .section-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .tech-stack {
+    color: #ccc;
+}
+
+body.dark-mode .skill-card .details {
+    color: #bbb;
+}
+
+body.dark-mode .work-card button {
+    background: #444;
+}
+
+body.dark-mode .work-card button:hover {
+    background: #666;
+}
+
+body.dark-mode .nav-links li a::after {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* ======================================
+   Intro Screen
+====================================== */
+.intro-screen,
+.apple-intro {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    transition: opacity 1s ease-out, visibility 1s ease-out, background-color 0.5s ease, color 0.5s ease;
+}
+
+.intro-screen {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.intro-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.apple-intro {
+    background: var(--text-light);
+    color: var(--bg-dark);
+}
+
+.apple-intro .intro-content h1,
+.apple-intro .intro-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1.5s ease-out forwards;
+}
+
+.apple-intro .intro-content h1 {
+    font-size: 2.75rem;
+    font-weight: 600;
+    animation-delay: 0.5s;
+}
+
+.apple-intro .intro-content p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================
+   Theme Toggle Button
+====================================== */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#theme-toggle::before {
+    content: "";
+    position: absolute;
+    left: -0.75rem;
+    height: 1.5rem;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ======================================
+   Navbar Styles
+====================================== */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    background: var(--glass-dark);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.nav-links li.active a {
+    background-color: var(--muted);
+}
+
+.nav-links li:not(.active):hover a {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tooltip on hover */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -1.8rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+.nav-links li a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======================================
+   Hero & Main Layout
+====================================== */
+.main-content {
+    padding: 6rem 2rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero {
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtext {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 6rem;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 4rem 0;
+    width: 100%;
+}
+
+/* ======================================
+   Skills Section
+====================================== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    flex: 1;
+    min-width: 250px;
+    background: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.skill-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #111;
+}
+
+.skill-card .details {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0.85rem;
+    color: #444;
+    margin-top: 1rem;
+    line-height: 1.5;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.skill-card:hover .details {
+    opacity: 1;
+    max-height: 300px;
+}
+
+/* ======================================
+   Work Section
+====================================== */
+.work-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.work-card {
+    background: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.work-card .buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.work-card button {
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.9rem;
+    background: #ccc;
+    color: var(--text-light);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.work-card button:hover {
+    background: #999;
+    opacity: 1;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.skill-card:hover,
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.more-projects {
+    margin-top: 1rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.button-link:hover {
+    background: #0056b3;
+}
+
+/* ======================================
+   Responsive Layout
+====================================== */
+@media (max-width: 768px) {
+    .navbar {
+        top: auto;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-links li a span {
+        display: none;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem;
+        justify-content: center;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .work-list {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links li a::after {
+        top: -1.5rem;
+        bottom: auto;
+        transform: translateY(-5px);
+    }
+
+    .nav-links li a:hover::after {
+        transform: translateY(0);
+    }
+
+    .lang-menu {
+        top: auto;
+        bottom: 100%;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* ======================================
+   Accessibility (Reduce Motion)
+====================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ======================================
+   Language Dropdown Styles
+====================================== */
+.language-dropdown {
+    position: relative;
+}
+
+#lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    margin-inline-start: 0.5rem;
+    position: relative;
+    top: 5px;
+}
+
+#lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-menu {
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.75rem;
+    min-width: 50px;
+    background: var(--glass-dark);
+    color: var(--text-light);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.lang-menu.hidden {
+    display: none;
+}
+
+.lang-menu li {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.lang-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .lang-menu {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(999px);
+    color: #fff;
+    overflow: visible;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow)
+
+}
+
+body.dark-mode .lang-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .lang-menu li {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+body:not(.dark-mode) .lang-menu {
+    background: rgba(64, 64, 64, 0.85);
+    color: #fff;
+}
+
+body:not(.dark-mode) .lang-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .lang-menu {
+        top: auto;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* ======================================
+   Link Styling - Clean & Modern
+====================================== */
+#contact a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #007aff;
+    border-bottom: 1px solid #007aff;
+}

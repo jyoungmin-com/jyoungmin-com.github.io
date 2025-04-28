@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Youngmin's Portfolio</title>
+
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <script defer src="../js/script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+<!-- ===========================
+     Navigation Bar (initially hidden)
+============================ -->
+<header class="navbar hidden">
+    <nav class="nav-container">
+        <ul class="nav-links">
+            <li><a href="#home"><i data-lucide="home"></i><span>Home</span></a></li>
+            <li><a href="#about"><i data-lucide="user"></i><span>About</span></a></li>
+            <li><a href="#work"><i data-lucide="layout-grid"></i><span>Projects</span></a></li>
+            <li><a href="#contact"><i data-lucide="mail"></i><span>Contact</span></a></li>
+        </ul>
+
+        <!-- Dark mode toggle button -->
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <!-- Language selection dropdown -->
+        <div class="language-dropdown">
+            <button id="lang-toggle" aria-label="Choose language">EN</button>
+            <ul class="lang-menu hidden">
+                <li data-lang="en">EN</li>
+                <li data-lang="ko">KO</li>
+                <li data-lang="ja">JA</li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- ===========================
+     Main Content (initially hidden)
+============================ -->
+<main class="main-content hidden">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Hello, world. I'm Youngmin.</h1>
+        <br/>
+        <p class="hero-subtext">
+            I turn caffeine ☕ into cloud infrastructure, <br/>
+            curly braces {} into elegant solutions, <br/>
+            and late-night Googling into pure magic.
+        </p>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>About Me</h2>
+        <p>
+            If building software were cooking, I’d be the chef experimenting wildly in the kitchen at 3 AM—
+            occasionally messy, often creative, always delicious.
+        </p>
+        <p>
+            Currently immersed in a rigorous Cloud Native Engineering bootcamp, I’m sharpening my skills in Backend,
+            Frontend, and Cloud Engineering. I enjoy writing code that’s clean, maintainable, and occasionally clever.
+        </p>
+        <p>
+            When I’m not debugging, you’ll likely find me exploring new tech stacks, tweaking container configurations,
+            or convincing myself that one more coffee couldn’t possibly hurt.
+        </p>
+        <p>
+            Looking for clean code, smart automation, and a sprinkle of innovation? You’re in the right place. My goal
+            isn’t just building efficient and reliable systems—it’s creating software I’d proudly showcase at dinner
+            parties (if anyone ever asks).
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+
+        <div class="skill-card">
+            <h3>Backend Development</h3>
+            <p><strong>Focus:</strong> REST APIs, MVC architecture, Data persistence, Secure authentication</p>
+            <p><strong>Technologies:</strong> Java, Spring Boot, MySQL, Servlet/JSP, Redis</p>
+            <div class="details">
+                <p>
+                    Writing robust and maintainable backend code, keeping APIs clean, and databases happy.
+                </p>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Frontend Development</h3>
+            <p><strong>Focus:</strong> Interactive Web Applications, Responsive User Interfaces</p>
+            <p><strong>Technologies:</strong> HTML5, CSS3, JavaScript</p>
+            <div class="details">
+                <p>
+                    Crafting engaging, responsive UIs that users actually enjoy interacting with—not just tolerate.
+                </p>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Infrastructure & DevOps</h3>
+            <p><strong>Focus:</strong> Cloud Infrastructure, CI/CD, Container orchestration, Automation</p>
+            <p><strong>Technologies:</strong> AWS, Kubernetes, Docker, Terraform, GitHub Actions, ArgoCD (GitOps),
+                Linux, Shell scripting, Prometheus, Grafana, OpenShift, CloudFormation, Service Mesh
+            </p>
+            <div class="details">
+                <p>
+                    Building reliable infrastructure, automating everything possible, and monitoring obsessively for the
+                    slightest hiccup.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- Work Section -->
+    <section class="section" id="work">
+        <h2>My Recent Projects</h2>
+
+        <div class="work-list">
+            <!-- Placeholder projects -->
+            <div class="work-card">
+                <h3>Simple Board Application (JSP + Servlet + Spring MVC)</h3>
+                <p>A simple bulletin board built with JSP, Servlet, and Spring MVC as part of a Spring learning project. MVC layers are clearly separated for clean architecture.</p>
+                <div class="tech-stack">Tech: Java 21, Spring Boot 3.4.4, JSP, Servlet, Spring MVC, Gradle</div>
+                <div class="buttons">
+                    <a href="https://github.com/jyoungmin-com/JSP-Servlet-SpringMVC" target="_blank" class="button-link">
+                        GitHub
+                    </a>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>Project #2</h3>
+                <p>Coming soon.</p>
+                <div class="tech-stack">Tech: TBD</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>Project #3</h3>
+                <p>Coming soon.</p>
+                <div class="tech-stack">Tech: TBD</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <h3>Project #4</h3>
+                <p>Coming soon.</p>
+                <div class="tech-stack">Tech: TBD</div>
+                <div class="buttons">
+                    <button disabled>GitHub</button>
+                    <button disabled>Live Demo</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="more-projects">Want to see more? Email me.</p>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2>Let’s connect</h2>
+        <p>Let’s talk tech—or whatever else you’ve got in mind. I’ll bring the coffee ☕</p>
+        <p><strong>Email:</strong> <a href="mailto:youngmin.jung@outlook.com">youngmin.jung@outlook.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/jyoungmin-com" target="_blank">github.com/your-github</a>
+        </p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a>
+        </p>
+    </section>
+
+    <hr class="section-divider"/>
+</main>
+</body>
+</html>
